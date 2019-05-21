@@ -22,7 +22,7 @@ const Deliveries = ({ deliveries, onDeliveryDelete }) => {
           <Delivery
             onDeliveryDelete={handleDeliveryDelete}
             delivery={delivery}
-            key={delivery.telefono}
+            key={delivery.id}
           />
         );
       })}
