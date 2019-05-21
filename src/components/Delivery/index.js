@@ -34,7 +34,8 @@ Delivery.propTypes = {
     id: PropTypes.string.isRequired,
     nombre: PropTypes.string.isRequired,
     direccion: PropTypes.string.isRequired,
-    telefono: PropTypes.string.isRequired
+    telefono: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+      .isRequired
   }).isRequired,
   onDeliveryDelete: PropTypes.func.isRequired
 };

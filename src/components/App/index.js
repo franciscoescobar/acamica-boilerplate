@@ -6,6 +6,7 @@ import "./index.css";
 import * as ROUTES from "../../constants/routes";
 import mockDeliveries from "../../mock/deliveries";
 import mockDelivery from "../../mock/delivery";
+import uniqId from "uniqid";
 
 const App = () => {
   const [state, setState] = useReducer(
@@ -36,7 +37,7 @@ const App = () => {
       });
     } else {
       const addNewDelivery = newDelivery;
-      addNewDelivery.id = 12;
+      addNewDelivery.id = uniqId();
       setState({
         deliveries: [...deliveries, addNewDelivery],
         filteredDeliveries: [...deliveries, addNewDelivery]
