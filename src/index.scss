@@ -1,1 +1,44 @@
 @import "node_modules/bulmaswatch/darkly/bulmaswatch";
+
+.admin-form {
+  margin: 0 20px;
+}
+input.input {
+  margin: 0 40px;
+}
+textarea.textarea {
+  margin: 0 40px;
+}
+label.label {
+  width: 140px;
+  text-align: right;
+}
+.first-title {
+  margin-top: 10px;
+}
+.idem {
+  margin-left: 10px;
+}
+.checkbox {
+  top: -12px;
+}
+div.filters {
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+textarea.textarea {
+  resize: none;
+}
+table.table {
+  width: 70%;
+}
+.icon-button {
+  padding: 15px;
+  margin-right: 10px;
+}
+.center-td-th {
+  vertical-align: middle !important;
+  width: 25%;
+  text-align: center !important;
+}
