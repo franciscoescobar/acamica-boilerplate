@@ -27,23 +27,6 @@ const Admin = props => {
   };
 
   const handleOnCheckChange = () => {
-    if (idem) {
-      setDelivery({
-        ...delivery,
-        nombreComercial: "",
-        apellidoComercial: "",
-        telefonoComercial: "",
-        emailComercial: ""
-      });
-    } else {
-      setDelivery({
-        ...delivery,
-        nombreComercial: delivery.nombreAdministrativo,
-        apellidoComercial: delivery.apellidoAdministrativo,
-        telefonoComercial: delivery.telefonoAdministrativo,
-        emailComercial: delivery.emailAdministrativo
-      });
-    }
     setIdem(!idem);
   };
 
@@ -61,7 +44,7 @@ const Admin = props => {
               placeholder="Nombre"
               maxLength="50"
               required
-              value={delivery.nombre}
+              value={delivery ? delivery.nombre : ""}
               onChange={handleOnInputChange}
             />
           </div>
@@ -78,7 +61,7 @@ const Admin = props => {
               maxLength="50"
               required
               onChange={handleOnInputChange}
-              value={delivery.telefono}
+              value={delivery ? delivery.telefono : ""}
             />
           </div>
         </div>
@@ -95,7 +78,7 @@ const Admin = props => {
               cols="100"
               required
               onChange={handleOnInputChange}
-              value={delivery.descripcion}
+              value={delivery ? delivery.descripcion : ""}
             />
           </div>
         </div>
@@ -111,7 +94,7 @@ const Admin = props => {
               cols="100"
               maxLength="500"
               onChange={handleOnInputChange}
-              value={delivery.especialidades}
+              value={delivery ? delivery.especialidades : ""}
             />
           </div>
         </div>
@@ -127,7 +110,7 @@ const Admin = props => {
               maxLength="200"
               required
               onChange={handleOnInputChange}
-              value={delivery.direccion}
+              value={delivery ? delivery.direccion : ""}
             />
           </div>
         </div>
@@ -141,7 +124,7 @@ const Admin = props => {
               type="time"
               placeholder="8:00"
               required
-              value={delivery.desde}
+              value={delivery ? delivery.desde : ""}
               onChange={handleOnInputChange}
             />
             <span className="icon is-small is-right">
@@ -155,7 +138,7 @@ const Admin = props => {
               type="time"
               placeholder="20:00"
               required
-              value={delivery.hasta}
+              value={delivery ? delivery.hasta : ""}
               onChange={handleOnInputChange}
             />
             <span className="icon is-small is-right">
@@ -177,7 +160,7 @@ const Admin = props => {
                 placeholder="Nombre"
                 maxLength="200"
                 required
-                value={delivery.nombreAdministrativo}
+                value={delivery ? delivery.nombreAdministrativo : ""}
                 onChange={handleOnInputChange}
               />
             </div>
@@ -193,7 +176,7 @@ const Admin = props => {
                 placeholder="Nombre"
                 maxLength="200"
                 required
-                value={delivery.apellidoAdministrativo}
+                value={delivery ? delivery.apellidoAdministrativo : ""}
                 onChange={handleOnInputChange}
               />
             </div>
@@ -209,7 +192,7 @@ const Admin = props => {
                 placeholder="264*******"
                 maxLength="100"
                 required
-                value={delivery.telefonoAdministrativo}
+                value={delivery ? delivery.telefonoAdministrativo : ""}
                 onChange={handleOnInputChange}
               />
             </div>
@@ -224,7 +207,7 @@ const Admin = props => {
                 placeholder="Email input"
                 required
                 maxLength="100"
-                value={delivery.emailAdministrativo}
+                value={delivery ? delivery.emailAdministrativo : ""}
                 onChange={handleOnInputChange}
               />
             </div>
@@ -236,7 +219,7 @@ const Admin = props => {
             <input
               type="checkbox"
               onChange={handleOnCheckChange}
-              value={delivery.checkbox}
+              value={delivery ? delivery.checkbox : false}
             />
             <label className="idem">Idem contacto administrativo</label>
           </div>
@@ -251,7 +234,13 @@ const Admin = props => {
                 placeholder="Nombre"
                 maxLength="200"
                 required
-                value={delivery.nombreComercial}
+                value={
+                  delivery
+                    ? delivery && idem
+                      ? delivery.nombreAdministrativo
+                      : delivery.nombreComercial
+                    : ""
+                }
                 onChange={handleOnInputChange}
               />
             </div>
@@ -267,7 +256,13 @@ const Admin = props => {
                 placeholder="Nombre"
                 maxLength="200"
                 required
-                value={delivery.apellidoComercial}
+                value={
+                  delivery
+                    ? delivery && idem
+                      ? delivery.apellidoAdministrativo
+                      : delivery.apellidoComercial
+                    : ""
+                }
                 onChange={handleOnInputChange}
               />
             </div>
@@ -283,7 +278,13 @@ const Admin = props => {
                 placeholder="264*******"
                 maxLength="100"
                 required
-                value={delivery.telefonoComercial}
+                value={
+                  delivery
+                    ? delivery && idem
+                      ? delivery.telefonoAdministrativo
+                      : delivery.telefonoComercial
+                    : ""
+                }
                 onChange={handleOnInputChange}
               />
             </div>
@@ -299,7 +300,13 @@ const Admin = props => {
                 placeholder="Email input"
                 required
                 maxLength="100"
-                value={delivery.emailComercial}
+                value={
+                  delivery
+                    ? delivery && idem
+                      ? delivery.emailAdministrativo
+                      : delivery.emailComercial
+                    : ""
+                }
                 onChange={handleOnInputChange}
               />
             </div>
