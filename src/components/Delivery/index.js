@@ -32,7 +32,7 @@ const Delivery = ({ delivery, onDeliveryDelete }) => {
 Delivery.propTypes = {
   delivery: PropTypes.shape({
     id: PropTypes.string.isRequired,
-    nombre: PropTypes.sring.isRequired,
+    nombre: PropTypes.string.isRequired,
     direccion: PropTypes.string.isRequired,
     telefono: PropTypes.string.isRequired
   }).isRequired,

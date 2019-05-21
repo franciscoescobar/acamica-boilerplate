@@ -331,7 +331,8 @@ const Admin = props => {
     </form>
   );
 };
-Admin.PropTypes = {
+
+Admin.propTypes = {
   deliveries: PropTypes.arrayOf(PropTypes.object).isRequired,
   onSubmitChange: PropTypes.func.isRequired,
   delivery: PropTypes.object.isRequired
