@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, withRouter } from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
+import PropTypes from "prop-types";
+
 const Admin = props => {
   const { deliveries, onSubmitChange, delivery: mockDelivery } = props;
   const [idem, setIdem] = useState(false);
@@ -328,5 +330,10 @@ const Admin = props => {
       </div>
     </form>
   );
+};
+Admin.PropTypes = {
+  deliveries: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onSubmitChange: PropTypes.func.isRequired,
+  delivery: PropTypes.object.isRequired
 };
 export default withRouter(Admin);

@@ -1,5 +1,5 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 const Filters = ({ onFilterChange, filters }) => {
   const handleFilters = event => {
     const newFilters = { ...filters, [event.target.name]: event.target.value };
@@ -28,5 +28,11 @@ const Filters = ({ onFilterChange, filters }) => {
     </div>
   );
 };
-
+Filters.propTypes = {
+  filters: PropTypes.shape({
+    nombre: PropTypes.string.isRequired,
+    direccion: PropTypes.string.isRequired
+  }).isRequired,
+  onFilterChange: PropTypes.func.isRequired
+};
 export default Filters;

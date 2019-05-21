@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 const Delivery = ({ delivery, onDeliveryDelete }) => {
   return (
     <tbody>
@@ -28,5 +29,13 @@ const Delivery = ({ delivery, onDeliveryDelete }) => {
     </tbody>
   );
 };
-
+Delivery.propTypes = {
+  delivery: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    nombre: PropTypes.sring.isRequired,
+    direccion: PropTypes.string.isRequired,
+    telefono: PropTypes.string.isRequired
+  }).isRequired,
+  onDeliveryDelete: PropTypes.func.isRequired
+};
 export default Delivery;

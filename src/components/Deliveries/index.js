@@ -1,6 +1,6 @@
 import React from "react";
 import Delivery from "../Delivery";
-
+import PropTypes from "prop-types";
 const Deliveries = ({ deliveries, onDeliveryDelete }) => {
   const handleDeliveryDelete = deliveryId => {
     const newDeliveries = deliveries.filter(deliv => deliv.id !== deliveryId);
@@ -29,5 +29,8 @@ const Deliveries = ({ deliveries, onDeliveryDelete }) => {
     </table>
   );
 };
-
+Deliveries.propTypes = {
+  deliveries: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onDeliveryDelete: PropTypes.func.isRequired
+};
 export default Deliveries;
