@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 const Home = ({ deliveries, filters, onFilterChange, onDeliveryDelete }) => (
   <>
     <h1 className="title">Listado de deliveries</h1>
-    <Link className="button" to="/delivery">
+    <Link className="button add-new is-link" to="/delivery">
       Crear nuevo delivery
     </Link>
     <Filters filters={filters} onFilterChange={onFilterChange} />

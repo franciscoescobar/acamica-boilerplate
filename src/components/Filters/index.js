@@ -7,7 +7,7 @@ const Filters = ({ onFilterChange, filters }) => {
   };
   return (
     <div className="field is-horizontal filters">
-      <label className="label">Nombre</label>
+      <label className="label nombre">Nombre</label>
       <input
         className="input"
         type="text"

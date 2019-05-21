@@ -23,8 +23,6 @@ label.label {
   top: -12px;
 }
 div.filters {
-  height: 50px;
-  display: flex;
   align-items: center;
 }
 textarea.textarea {
@@ -41,4 +39,15 @@ table.table {
   vertical-align: middle !important;
   width: 25%;
   text-align: center !important;
+}
+h1.title {
+  margin-left: 15px;
+  margin-top: 15px;
+}
+.add-new {
+  float: right;
+  margin-right: 15px;
+}
+label.nombre {
+  margin-left: 15px;
 }
