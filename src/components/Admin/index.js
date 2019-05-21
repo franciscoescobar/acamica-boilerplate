@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
 const Admin = props => {
   const { deliveries, onSubmitChange, delivery: mockDelivery } = props;
@@ -321,9 +321,9 @@ const Admin = props => {
           </button>
         </div>
         <div className="control">
-          <button className="button is-text" type="reset">
+          <Link className="button is-text" to={ROUTES.HOME}>
             Cancel
-          </button>
+          </Link>
         </div>
       </div>
     </form>
