@@ -19,9 +19,14 @@ const Admin = props => {
 
   const handleOnSubmit = event => {
     event.preventDefault();
-    console.log(delivery);
-    onSubmitChange(delivery);
-    props.history.push(`${ROUTES.HOME}`);
+    if (
+      window.confirm(
+        "Seguro que quiere borrar este delivery? No habra manera de recuperarlo"
+      )
+    ) {
+      onSubmitChange(delivery);
+      props.history.push(`${ROUTES.HOME}`);
+    }
   };
 
   const handleOnInputChange = event => {

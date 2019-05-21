@@ -18,7 +18,11 @@ const Delivery = ({ delivery, onDeliveryDelete }) => {
           <button
             className="button icon-button is-danger is-outlined"
             onClick={() => {
-              if (window.confirm("Are you sure you wish to delete this item?"))
+              if (
+                window.confirm(
+                  "Seguro que quiere borrar este delivery? No habra manera de recuperarlo"
+                )
+              )
                 onDeliveryDelete(delivery.id);
             }}
           >
